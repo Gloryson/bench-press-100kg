@@ -1,3 +1,4 @@
+import { Providers } from '@/components';
 import './globals.scss';
 import type { Metadata } from 'next';
 
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <Providers>
+          { children }
+        </Providers> 
       </body>
     </html>
   )
