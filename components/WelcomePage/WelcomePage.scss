@@ -12,43 +12,16 @@
   h1 {
     font-size: calc(40px + 3vw);
     font-weight: 900;
-    color: #FFCDB1;
-    text-shadow: 0 0 10px #805146, 0 0 10px #805146, 0 0 10px #805146;
+    color: var(--main-light-color);
+    text-shadow: 0 0 10px var(--main-dark-color), 0 0 10px var(--main-dark-color), 0 0 10px var(--main-dark-color);
     text-align: center;
   }
 
-  button {
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 700;
-    box-shadow: 0 0 5px 1px #805146;
-    cursor: pointer;
-  }
-
   button:nth-child(2) {
-    background-color: #379173;
-
-    &:hover {
-      background-color: #C86E8C;
-    }
-
-    &:active {
-      background-color: #BE6885;
-    }
+    background-color: var(--green);
   }
 
   button:nth-child(3) {
-    background-color: #FF9F56;
-
-    &:hover {
-      background-color: #0060A9;
-    }
-
-    &:active {
-      background-color: #005A9F;
-    }
+    background-color: var(--orange); 
   }
 }

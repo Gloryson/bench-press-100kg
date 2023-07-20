@@ -1,0 +1,34 @@
+.start__page {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 4px;
+  min-height: 100vh;
+  background-color: var(--main-dark-color);
+
+  @media (max-width: 800px) {
+    padding: 60px 10px;
+  }
+
+  p {
+    max-width: 800px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  h3 {
+    color: var(--orange);
+    text-align: center;
+  }
+
+  div {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    box-shadow: inset 0 0 7px 1px var(--main-light-color);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
