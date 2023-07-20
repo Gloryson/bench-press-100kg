@@ -6,6 +6,7 @@ import './globals.scss';
 export const metadata: Metadata = {
   title: 'Bench press 100kg',
   description: 'How to get 100kg bench press',
+  themeColor: '#805146'
 }
 
 export default function RootLayout({
