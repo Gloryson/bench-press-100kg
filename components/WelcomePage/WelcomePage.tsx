@@ -1,12 +1,13 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context';
 import './WelcomePage.scss';
 
 
 export function WelcomePage () {
 
-  const router = useRouter();
+  const router: AppRouterInstance = useRouter();
 
 
   return(

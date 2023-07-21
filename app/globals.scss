@@ -19,6 +19,7 @@
   background: transparent;
   overflow-x: hidden;
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   color: white;
 }
 
@@ -27,15 +28,14 @@ button {
   height: 50px;
   border-radius: 25px;
   font-size: 18px;
-  font-weight: 700;
   box-shadow: 0 0 5px 1px var(--main-dark-color);
   cursor: pointer;
 
   &:hover {
-    filter: brightness(95%);
+    filter: brightness(110%);
   }
 
   &:active {
-    filter: brightness(90%);
+    filter: brightness(100%);
   }
 }

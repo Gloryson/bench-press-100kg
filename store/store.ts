@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import alertSlice from './alertSlice';
+import userSlice from './userSlice';
 
 
 export const store = configureStore({
   reducer: {
     alert: alertSlice,
-    
+    user: userSlice
   },
 })
 
