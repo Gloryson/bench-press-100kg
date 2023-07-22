@@ -1,4 +1,6 @@
 import { Providers } from './Providers/Providers';
+import { TrainingDay } from './TrainingDay/TrainingDay';
+import { Week } from './Week/Week';
 import { WelcomePage } from './WelcomePage/WelcomePage';
 
 
@@ -6,5 +8,7 @@ import { WelcomePage } from './WelcomePage/WelcomePage';
 
 export {
   Providers,
-  WelcomePage
+  WelcomePage,
+  Week,
+  TrainingDay
 }

@@ -13,7 +13,7 @@ export default function Start () {
   const router = useRouter();
 
   function handleButton (week: number): void {
-    dispatch(setInitialWeek(week - 1));
+    dispatch(setInitialWeek(week));
     router.push('/training');
   }
 
