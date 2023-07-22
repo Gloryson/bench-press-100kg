@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import trainingDayModalSlice from './trainingDayModalSlice';
+import workoutSlice from './workoutSlice';
 import userSlice from './userSlice';
 
 
 export const store = configureStore({
   reducer: {
-    trainingDayModal: trainingDayModalSlice,
+    workout: workoutSlice,
     user: userSlice
   },
 })

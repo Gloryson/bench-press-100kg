@@ -17,15 +17,14 @@
   }
 
   h3 {
-    color: var(--orange);
+    color: var(--main-light-color);
     text-align: center;
   }
 
   button {
     width: 100%;
     max-width: 400px;
-    background-color: var(--green);
-    border-radius: 10px;
+    background-color: var(--pink);
     cursor: pointer;
   }
 }

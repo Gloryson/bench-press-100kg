@@ -14,7 +14,7 @@ export default function Start () {
 
   function handleButton (week: number): void {
     dispatch(setInitialWeek(week));
-    router.push('/training');
+    router.push('/schedule');
   }
 
   return(

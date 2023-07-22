@@ -2,7 +2,7 @@
 
 
 
-export default function Training () {
+export default function Schedule () {
   return(
     <section 
       style={{
