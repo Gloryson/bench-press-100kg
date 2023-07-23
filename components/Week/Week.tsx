@@ -3,7 +3,7 @@
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import { useRouter } from 'next/navigation';
 import { setWorkoutExercices } from '@/store/userSlice';
-import { trainingProgram } from '@/database/training';
+import { trainingProgram } from '@/database/trainingProgram';
 import './Week.scss';
 
 

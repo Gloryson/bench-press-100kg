@@ -5,14 +5,17 @@ import { Exercise } from '@/components';
 import { useId } from 'react';
 import { useRouter } from 'next/navigation';
 import { setCurrTrainingDay, setCurrTrainingWeek } from '@/store/userSlice';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import './Workout.scss';
 
 
 export default function Workout () {
 
+  useLocalStorage();
   const { currTrainingWeek, currTrainingDay, exercises } = useAppSelector(state => state.user);
   const dispatch = useAppDispatch();
   const router = useRouter();
+  const id = useId();
 
   
   function handleButton (): void {
@@ -29,7 +32,7 @@ export default function Workout () {
       {
         exercises.map(item => {
           return(
-            <Exercise text={item} key={useId()} />
+            <Exercise text={item} key={id} />
           )
         })
       }
