@@ -1,16 +1,13 @@
 'use client'
 
-import { useAppDispatch, useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store/store';
 import { useRouter } from 'next/navigation';
-import { setWorkoutExercices } from '@/store/userSlice';
-import { trainingProgram } from '@/database/trainingProgram';
 import './Week.scss';
 
 
 export function Week ( { weekNumber } : { weekNumber: number } ) {
 
-  const { currTrainingDay, currTrainingWeek, initialWeek } = useAppSelector(state => state.user);
-  const dispatch = useAppDispatch();
+  const { currTrainingDay, currTrainingWeek } = useAppSelector(state => state.user);
   const router = useRouter();
 
 
@@ -21,7 +18,6 @@ export function Week ( { weekNumber } : { weekNumber: number } ) {
 
   function handleButton (week: number, day: number): void {
     if (week === currTrainingWeek && day === currTrainingDay) {
-      dispatch(setWorkoutExercices(trainingProgram[week + initialWeek][day]));
       router.push('/workout');
     }
   }

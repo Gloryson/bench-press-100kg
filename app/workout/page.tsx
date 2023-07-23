@@ -2,9 +2,8 @@
 
 import { useAppDispatch, useAppSelector } from '@/store/store';
 import { Exercise } from '@/components';
-import { useId } from 'react';
 import { useRouter } from 'next/navigation';
-import { setCurrTrainingDay, setCurrTrainingWeek } from '@/store/userSlice';
+import { setCurrTrainingDay } from '@/store/userSlice';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import './Workout.scss';
 
@@ -12,31 +11,26 @@ import './Workout.scss';
 export default function Workout () {
 
   useLocalStorage();
-  const { currTrainingWeek, currTrainingDay, exercises } = useAppSelector(state => state.user);
+  const user = useAppSelector(state => state.user);
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const id = useId();
-
   
-  function handleButton (): void {
-    if (currTrainingDay + 1 > 2) {
-      dispatch(setCurrTrainingWeek(currTrainingWeek + 1));
-    }
-    dispatch(setCurrTrainingDay((currTrainingDay + 1) % 3));
-    router.push('/schedule');
-  }
 
 
   return(
     <section className={'workout__page'}>
       {
-        exercises.map(item => {
+        user.exercises?.map((item, index) => {
           return(
-            <Exercise text={item} key={id} />
+            <Exercise text={item} key={index + new Date().toISOString()} />
           )
         })
       }
-      <button onClick={handleButton}>Finish</button>
+      <button onClick={() => {
+        dispatch(setCurrTrainingDay(user.currTrainingDay + 1));
+        router.push('/schedule');
+      }}
+      >Finish</button>
     </section>
   )
 }

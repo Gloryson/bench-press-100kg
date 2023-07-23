@@ -4,7 +4,6 @@ import { Week } from '@/components';
 import { trainingProgram } from '@/database/trainingProgram';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { useAppSelector } from '@/store/store';
-import { useId } from 'react';
 
 
 
@@ -12,7 +11,7 @@ export default function Schedule () {
 
   useLocalStorage();
   const { initialWeek } = useAppSelector(state => state.user);
-  const id = useId();
+  
 
   return(
     <section 
@@ -26,7 +25,7 @@ export default function Schedule () {
       {
         trainingProgram.slice(initialWeek).map((week, index) => {
           return(
-            <Week weekNumber={index} key={id} />
+            <Week weekNumber={index} key={index + new Date().toISOString()} />
           )
         })
       }

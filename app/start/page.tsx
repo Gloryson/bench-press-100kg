@@ -12,11 +12,13 @@ export default function Start () {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
+
   function handleButton (week: number): void {
     dispatch(setInitialWeek(week));
     router.push('/schedule');
   }
 
+  
   return(
     <section className={'start__page'}>
       <p>
