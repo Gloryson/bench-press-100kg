@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import workoutSlice from './workoutSlice';
 import userSlice from './userSlice';
 
 
 export const store = configureStore({
   reducer: {
-    workout: workoutSlice,
     user: userSlice
   },
 })

@@ -1,0 +1,46 @@
+.week {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.days__container {
+  display: grid;
+  grid-template: 1fr / repeat(7, 1fr);
+  width: 100%;
+  max-width: calc(75px * 7 + 18px);
+  height: calc((100vw - 28px) / 7);
+  max-height: 75px;
+  gap: 3px;
+
+  .day {
+    max-width: 75px;
+    max-height: 75px;
+    background: var(--main-mid-color) url(/svg/relax.svg) no-repeat center;
+    background-size: 40%;
+    border-radius: 5px;
+  }
+
+  .training__day, .current__training__day {
+    background: var(--green) url(/svg/workout.svg) no-repeat center;
+    background-size: 60%;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+
+    &:active {
+      filter: brightness(100%);
+    }
+  }
+
+  .current__training__day {
+    background-color: var(--pink);
+  }
+}

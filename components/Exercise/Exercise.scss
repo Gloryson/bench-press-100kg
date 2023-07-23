@@ -9,16 +9,16 @@
   box-shadow: 0 0 5px 1px #00000030;
   border-radius: 5px;
   padding: 0 15px;
+  cursor: pointer;
 
   &::after {
     content: '';
     width: 20px;
     height: 20px;
-    background: url(/completed.svg) no-repeat center;
+    background: url(/svg/completed.svg) no-repeat center;
     background-size: 100%;
     opacity: 0.25;
     filter: brightness(50%);
-    cursor: pointer;
   }
 }
 

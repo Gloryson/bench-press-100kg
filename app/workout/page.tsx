@@ -1,21 +1,39 @@
 'use client'
 
-import { useAppSelector } from '@/store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import { Exercise } from '@/components';
+import { useId } from 'react';
+import { useRouter } from 'next/navigation';
+import { setCurrTrainingDay, setCurrTrainingWeek } from '@/store/userSlice';
 import './Workout.scss';
 
 
 export default function Workout () {
 
-  const { exercises } = useAppSelector(state => state.workout);
+  const { currTrainingWeek, currTrainingDay, exercises } = useAppSelector(state => state.user);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  
+  function handleButton (): void {
+    if (currTrainingDay + 1 > 2) {
+      dispatch(setCurrTrainingWeek(currTrainingWeek + 1));
+    }
+    dispatch(setCurrTrainingDay((currTrainingDay + 1) % 3));
+    router.push('/schedule');
+  }
 
 
   return(
     <section className={'workout__page'}>
       {
-        exercises.map(item => <Exercise text={item} />)
+        exercises.map(item => {
+          return(
+            <Exercise text={item} key={useId()} />
+          )
+        })
       }
-      <button>Finish</button>
+      <button onClick={handleButton}>Finish</button>
     </section>
   )
 }
