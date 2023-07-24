@@ -14,7 +14,7 @@ export default function Start () {
 
 
   function handleButton (week: number): void {
-    dispatch(setInitialWeek(week));
+    dispatch(setInitialWeek(week - 1));
     router.push('/schedule');
   }
 
