@@ -25,7 +25,7 @@ export default function Schedule () {
       {
         trainingProgram.slice(initialWeek).map((week, index) => {
           return(
-            <Week weekNumber={index} key={index + new Date().toISOString()} />
+            <Week week={index} key={index + new Date().toISOString()} />
           )
         })
       }

@@ -5,8 +5,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: User = {
   initialWeek: 0,
-  currTrainingDay: 0,
   currTrainingWeek: 0,
+  currTrainingDay: 0,
   exercises: null,
 }
 
@@ -25,8 +25,8 @@ export const userSlice = createSlice({
 
     setInitialWeek (state, action: PayloadAction<number>) {
       state.initialWeek = action.payload;
-      state.currTrainingDay = 0;
       state.currTrainingWeek = 0;
+      state.currTrainingDay = 0;
       state.exercises = trainingProgram[state.initialWeek][0];
     },
 

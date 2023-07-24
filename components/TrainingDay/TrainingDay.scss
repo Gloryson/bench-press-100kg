@@ -1,0 +1,20 @@
+.training__day, .current__training__day {
+  max-width: 75px;
+  max-height: 75px;
+  background: var(--green) url(/svg/workout.svg) no-repeat center;
+  background-size: 60%;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(100%);
+  }
+}
+
+.current__training__day {
+  background-color: var(--pink);
+}

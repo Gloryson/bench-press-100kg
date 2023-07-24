@@ -19,6 +19,7 @@ export default function Workout () {
 
   return(
     <section className={'workout__page'}>
+      
       {
         user.exercises?.map((item, index) => {
           return(
@@ -26,11 +27,13 @@ export default function Workout () {
           )
         })
       }
+
       <button onClick={() => {
         dispatch(setCurrTrainingDay(user.currTrainingDay + 1));
         router.push('/schedule');
       }}
       >Finish</button>
+
     </section>
   )
 }

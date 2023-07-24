@@ -2,7 +2,7 @@
 
 export interface User {
   initialWeek: number;
-  currTrainingDay: number;
   currTrainingWeek: number;
+  currTrainingDay: number;
   exercises: string[] | null;
 }
