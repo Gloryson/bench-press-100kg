@@ -24,4 +24,50 @@
   button:nth-child(3) {
     background-color: var(--orange); 
   }
+
+  .welcome__page__fake__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--main-light-color);
+    width: 100vw;
+    height: 100dvh;
+    position: fixed;
+    background-color: var(--main-dark-color);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    animation: welcome__page-appearance 4s linear 1;
+
+    @keyframes welcome__page-appearance {
+      0% { opacity: 1; visibility: visible; }
+      66% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    span {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--main-light-color);
+      animation: dot-animation 1s linear infinite;
+
+      @keyframes dot-animation {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    }
+    
+    span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+    
+    span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
 }

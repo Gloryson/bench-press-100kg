@@ -63,7 +63,7 @@ button {
 }
 
 .appearance {
-  animation: appearance-animation 0.25s linear 1;
+  animation: appearance-animation 0.5s linear 1;
 
   @keyframes appearance-animation {
     0% { opacity: 0; }
@@ -78,5 +78,16 @@ button {
   @keyframes disappearance-animation {
     0% { opacity: 1; }
     100% { opacity: 0; }
+  }
+}
+
+.workout__disappearance {
+  animation: workout__disappearance-animation 0.25s linear 1;
+  transform: scale(0);
+  opacity: 0;
+
+  @keyframes workout__disappearance-animation {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
   }
 }

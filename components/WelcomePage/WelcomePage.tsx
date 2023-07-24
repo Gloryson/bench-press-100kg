@@ -12,7 +12,7 @@ export function WelcomePage () {
 
 
   return(
-    <section className={'welcome__page  appearance  ' + leaving}>
+    <section className={'welcome__page  ' + leaving}>
 
       <h1>THIS APP WILL HELP YOU GET 100KG BENCH PRESS</h1>
 
@@ -32,6 +32,7 @@ export function WelcomePage () {
           Continue
         </button>
 
+      <div className={'welcome__page__fake__loader'}>Loading<span>.</span><span>.</span><span>.</span></div>
     </section>
   )
 }

@@ -31,7 +31,7 @@ export default function Workout () {
       }
 
       <button onClick={() => {
-        setLeaving('disappearance');
+        setLeaving('workout__disappearance');
         router.push('/schedule');
         dispatch(setCurrTrainingDay(currTrainingDay + 1));
       }}
