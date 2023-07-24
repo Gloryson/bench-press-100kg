@@ -5,23 +5,25 @@ import { Exercise } from '@/components';
 import { useRouter } from 'next/navigation';
 import { setCurrTrainingDay } from '@/store/userSlice';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { useState } from 'react';
 import './Workout.scss';
 
 
 export default function Workout () {
 
   useLocalStorage();
-  const user = useAppSelector(state => state.user);
+  const [leaving, setLeaving] = useState<string>('');
+  const { currTrainingDay, exercises} = useAppSelector(state => state.user);
   const dispatch = useAppDispatch();
   const router = useRouter();
   
 
 
   return(
-    <section className={'workout__page'}>
+    <section className={'workout__page  appearance  ' + leaving}>
       
       {
-        user.exercises?.map((item, index) => {
+        exercises?.map((item, index) => {
           return(
             <Exercise text={item} key={index + new Date().toISOString()} />
           )
@@ -29,8 +31,9 @@ export default function Workout () {
       }
 
       <button onClick={() => {
-        dispatch(setCurrTrainingDay(user.currTrainingDay + 1));
+        setLeaving('disappearance');
         router.push('/schedule');
+        dispatch(setCurrTrainingDay(currTrainingDay + 1));
       }}
       >Finish</button>
 

@@ -3,12 +3,14 @@
 import { useAppDispatch } from '@/store/store';
 import { setInitialWeek } from '@/store/userSlice';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import './Start.scss';
 
 
 
 export default function Start () {
 
+  const [leaving, setLeaving] = useState<string>('');
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -16,11 +18,12 @@ export default function Start () {
   function handleButton (week: number): void {
     dispatch(setInitialWeek(week - 1));
     router.push('/schedule');
+    setLeaving('disappearance');
   }
 
   
   return(
-    <section className={'start__page'}>
+    <section className={'start__page  appearance  ' + leaving}>
       <p>
         Hello World. I have been doing fitness for 20 years, of which 7 years I have been a fitness trainer. I've noticed that all the guys want to bench press 100kg and I can help do it. This program is not for everyone:<br/><br/>
         1. You must know the technique of doing the exercise.<br/>

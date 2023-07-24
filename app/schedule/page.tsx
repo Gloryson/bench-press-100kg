@@ -4,17 +4,20 @@ import { Week } from '@/components';
 import { trainingProgram } from '@/database/trainingProgram';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { useAppSelector } from '@/store/store';
+import { useState } from 'react';
 
 
 
 export default function Schedule () {
 
   useLocalStorage();
+  const [leaving, setLeaving] = useState<string>('');
   const { initialWeek } = useAppSelector(state => state.user);
   
 
   return(
-    <section 
+    <section
+      className={'appearance  ' + leaving}
       style={{
         display: `grid`,
         minHeight: `100dvh`,
@@ -25,7 +28,7 @@ export default function Schedule () {
       {
         trainingProgram.slice(initialWeek).map((week, index) => {
           return(
-            <Week week={index} key={index + new Date().toISOString()} />
+            <Week week={index} key={index + new Date().toISOString()} setLeaving={setLeaving}/>
           )
         })
       }
