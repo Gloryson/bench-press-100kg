@@ -25,7 +25,7 @@ export default function Start () {
   return(
     <section className={'start__page  appearance  ' + leaving}>
       <p>
-        Hello World. I have been doing fitness for 20 years, of which 7 years I have been a fitness trainer. I've noticed that all the guys want to bench press 100kg and I can help do it. This program is not for everyone:<br/><br/>
+        Hello World. I have been doing fitness for 20 years, of which 7 years I have been a fitness trainer. I have noticed that all the guys want to bench press 100kg and I can help do it. This program is not for everyone:<br/><br/>
         1. You must know the technique of doing the exercise.<br/>
         2. You must be healthy.<br/>
         3. The program is not suitable for girls.<br/><br/>
