@@ -22,7 +22,6 @@ export default function Schedule () {
         display: `grid`,
         minHeight: `100dvh`,
         padding: `15px 0 30px 0`,
-        backgroundColor: `var(--main-dark-color)`
       }}
     >
       {
