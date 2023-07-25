@@ -24,6 +24,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: thin;
+  -webkit-tap-highlight-color: #ffffff20;
 
   &::-webkit-scrollbar {
     background-color: var(--main-dark-color);
@@ -78,16 +79,5 @@ button {
   @keyframes disappearance-animation {
     0% { opacity: 1; }
     100% { opacity: 0; }
-  }
-}
-
-.workout__disappearance {
-  animation: workout__disappearance-animation 0.25s linear 1;
-  transform: scale(0);
-  opacity: 0;
-
-  @keyframes workout__disappearance-animation {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0); opacity: 0; }
   }
 }

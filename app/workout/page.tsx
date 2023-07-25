@@ -31,11 +31,21 @@ export default function Workout () {
       }
 
       <button onClick={() => {
-        setLeaving('workout__disappearance');
-        router.push('/schedule');
-        dispatch(setCurrTrainingDay(currTrainingDay + 1));
+        setLeaving('disappearance');
+        setTimeout(() => {
+          dispatch(setCurrTrainingDay(currTrainingDay + 1));
+          router.push('/schedule');
+        }, 250)
       }}
       >Finish</button>
+
+      <button
+        style={{ backgroundColor: `var(--green)` }}
+        onClick={() => {
+          setLeaving('disappearance');
+          router.push('/schedule');
+        }}
+      >Back</button>
 
     </section>
   )

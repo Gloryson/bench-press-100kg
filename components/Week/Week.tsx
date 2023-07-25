@@ -2,6 +2,7 @@ import { TrainingDay } from '@/components';
 import { Dispatch, SetStateAction } from 'react';
 import './Week.scss';
 
+
 interface WeekProps {
   week: number;
   setLeaving: Dispatch<SetStateAction<string>>;
